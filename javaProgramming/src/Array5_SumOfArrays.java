@@ -27,10 +27,10 @@ public class Array5_SumOfArrays {
         int k = newArray.length-1;
         while(k>=0){
             int d = carry;
-            if(i>0){
+            if(i>=0){
                 d+=arr1[i];
             }
-            if(j>0){
+            if(j>=0){
                 d+=arr2[j];
             }
             carry = d/10;
