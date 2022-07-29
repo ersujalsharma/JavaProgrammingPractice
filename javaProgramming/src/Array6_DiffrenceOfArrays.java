@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Array_6_DiffrenceOfArrays {
+public class Array6_DiffrenceOfArrays {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int size1 = scanner.nextInt();
