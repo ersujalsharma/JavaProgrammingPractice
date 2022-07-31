@@ -1,14 +1,12 @@
 import java.util.Stack;
 
-import javax.print.attribute.Size2DSyntax;
-
 /**
  * Stack_1
  */
 public class Stack_1 {
 
     public static void main(String[] args) {
-        Stack stack = new Stack();
+        Stack<Integer> stack = new Stack<Integer>();
         System.out.println(stack);
         stack.push(1);
         System.out.println(stack);

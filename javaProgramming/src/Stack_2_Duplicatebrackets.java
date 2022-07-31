@@ -5,7 +5,7 @@ public class Stack_2_Duplicatebrackets {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine();
-        Stack<Character> stack = new Stack();
+        Stack<Character> stack = new Stack<Character>();
         for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
             if(ch == ')'){
