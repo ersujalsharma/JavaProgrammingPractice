@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * Arrays2D_LinearSearchingInA2daRRAY
  */
-public class Arrays2D_LinearSearchingInA2daRRAY {
+public class Arrays2D_9_LinearSearchingInA2daRRAY {
 
     private static final String Scanner = null;
 
