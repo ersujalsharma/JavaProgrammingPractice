@@ -6,50 +6,58 @@ public class Arrays2D_6_ExitPointOfMatrix {
         int mincol = 0;
         int maxrow = arr.length-1;
         int maxcol = arr[0].length-1;
-        while (minrow<=maxrow && mincol<=maxcol) {
-            for(int i=mincol;i<=maxcol;i++){
-                if(arr[minrow][i]==1){
-                    System.out.print(arr[minrow][i]+" ");
-                    break;
-                }
-                else{
-                    System.out.print(arr[minrow][i]+" ");
-                }
-            }
-            minrow++;
-            // Right Wall
-            for (int i = minrow; i <= maxrow; i++) {
-                if(arr[i][maxcol]==1){
-                    System.out.print(arr[i][maxcol]+" ");
-                    break;
-                }
-                else{
-                    System.out.print(arr[i][maxcol]+" ");
+        int dir=0;
+        while(minrow<=maxrow && mincol<=maxcol){
+            // For Left To Right
+            dir%=4;
+            if (dir==0) {
+                for (int j = mincol; j <= maxcol; j++) {
+                    if(arr[minrow][j]==1){
+                        System.out.print(arr[minrow][j]);
+                        dir ++;
+                    }
+                    else{
+                        System.out.print(arr[minrow][j]);
+                    }
+                    minrow++;
                 }
             }
-            maxcol--;
-            // Bottom
-            for (int i = maxcol; i >= mincol; i--) {
-                if(arr[maxrow][i]==1){
-                    System.out.print(arr[maxrow][i]+" ");
-                    break;
-                }
-                else{
-                    System.out.print(arr[maxrow][i]+" ");
-                }
-            }
-            maxrow--;
-            //Left
-            for (int i = maxrow; i >= minrow; i--) {
-                if(arr[i][mincol]==1){
-                    System.out.print(arr[i][mincol]+" ");
-                    break;
-                }
-                else{
-                    System.out.print(arr[i][mincol]+" ");
+            if(dir==1){
+                for (int i = minrow; i <= maxrow; i++) {
+                    if(arr[i][maxcol]==1){
+                        System.out.print(arr[i][maxcol]);
+                        dir ++;
+                    }
+                    else{
+                        System.out.print(arr[i][maxcol]);
+                    }
+                    maxcol--;
                 }
             }
-            mincol++;
+            if(dir==2){
+                for (int j = maxcol; j >= mincol; j--) {
+                    if(arr[maxrow][j]==1){
+                        System.out.print(arr[maxrow][j]);
+                        dir ++;
+                    }
+                    else{
+                        System.out.print(arr[maxrow][j]);
+                    }
+                    maxrow--;
+                }
+            }
+            if(dir==3){
+                for (int i = maxrow; i >= minrow; i--) {
+                    if(arr[i][mincol]==1){
+                        System.out.print(arr[i][mincol]);
+                        dir ++;
+                    }
+                    else{
+                        System.out.print(arr[i][mincol]);
+                    }
+                    mincol++;
+                }
+            }
         }
     }
 }
