@@ -5,40 +5,69 @@ public class Arrays2D_RingRotate {
         int[][] arr = {{1,2,3,4,5},{1,2,3,4,5},{1,2,3,4,5},{1,2,3,4,5},{1,2,3,4,5}};
         int s = 1;
         int r = 4;
-        int minrow = s-1;
-        int mincol = s-1;
-        int maxrow = arr.length;
-        int maxcol = arr[0].length;
-        int size = 2*(maxrow-minrow) +2*(maxcol-mincol);
-        int []OneDArray = new int [size];
+        int minr = s-1;
+        int minc = s-1;
+        int maxr = arr.length-s;
+        int maxc = arr[0].length-s;
+        int size = 2*(maxr-minr) + 2*(maxc-minc);
+        int []oned = new int [size];
         int index=0;
         //Left TO Right Top Wall
-        for (int i = mincol; i < maxcol; i++) {
-            OneDArray[index] = arr[minrow][i];
+        for (int i = minr, j = minc; i <= maxr; i++) {
+            oned[index] = arr[i][j];
             index++;
         }
-        maxrow+=1;
-        //Top To bottom Right Wall
-        for (int i = minrow; i < maxrow; i++) {
-            OneDArray[index] = arr[i][maxcol];
-            index++;
+    
+        for (int i = maxr, j = minc + 1; j <= maxc; j++) {
+        oned[index] = arr[i][j];
+        index++;
         }
-        maxcol-=1;
-        // Right to Left Bottom Wall
-        for (int i = maxcol; i > mincol; i--) {
-            OneDArray[index] = arr[maxrow][i];
-            index++;
+    
+        for (int i = maxr - 1, j = maxc; i >= minr; i--) {
+        oned[index] = arr[i][j];
+        index++;
         }
-        maxrow-=1;
-        // Bottom to Top Left Wall;
-        for (int i = maxrow; i > minrow; i--) {
-            OneDArray[index] = arr[i][mincol]; 
-            index++;
+    
+        for (int i = minr, j = maxc - 1; j > minc; j--) {
+        oned[index] = arr[i][j];
+        index++;
         }
         
-        for (int i = 0; i < OneDArray.length; i++) {
-            System.out.print(OneDArray[i]+"\t");
+
+        minr = s - 1;
+        minc = s - 1;
+        maxr = arr.length - s;
+        maxc = arr[0].length - s;
+
+        index = 0;
+        for (int i = minr, j = minc; i <= maxr; i++) {
+        arr[i][j] = oned[index];
+        index++;
+        }
+
+        for (int i = maxr, j = minc + 1; j <= maxc; j++) {
+        arr[i][j] = oned[index];
+        index++;
+        }
+
+        for (int i = maxr - 1, j = maxc; i >= minr; i--) {
+        arr[i][j] = oned[index];
+        index++;
+        }
+
+        for (int i = minr, j = maxc - 1; j > minc; j--) {
+        arr[i][j] = oned[index];
+        index++;
         }
     }
+    public static void reverse(int[] arr, int i, int j) {
+        while (i < j) {
+          int temp = arr[i];
+          arr[i] = arr[j];
+          arr[j] = temp;
+          i++;
+          j--;
+        }
+      }
 }
  
