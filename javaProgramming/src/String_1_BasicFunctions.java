@@ -1,4 +1,4 @@
-package javaProgramming;
+
 
 import java.util.Scanner;
 
@@ -19,5 +19,19 @@ public class String_1_BasicFunctions {
         // In Built Methods
         // length() - return the length of string
         System.out.println("sujlashrama".length());
+        // CharAt()
+        for (int i = 0; i < name.length(); i++) {
+            char ch = name.charAt(i);
+            System.out.print(ch+"");
+        }
+        // Substring
+        String subname = name.substring(1, 6);
+        System.out.println(subname);
+        // Concatenate +
+        String as = "Sujal"+"Sharma";
+        String[] stringArray = name.split("");
+        for (String string : stringArray) {
+            System.out.println(string);
+        }
     }
 }
