@@ -1,4 +1,4 @@
-public class StringBuilder_Exaple_2 {
+public class StringBuilder_Example_2 {
     public static void main(String[] args) {
         String str = "";
         int n = 10000;
