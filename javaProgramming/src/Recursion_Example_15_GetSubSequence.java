@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Recursion_Exaple_15_GetSubSequence {
+public class Recursion_Example_15_GetSubSequence {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String str = "abc";
