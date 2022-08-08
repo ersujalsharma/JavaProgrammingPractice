@@ -9,10 +9,13 @@ public class Recursion_Example_21_PrintStairsPath {
     }
 
     private static void printStairsPath(int number, String string) {
-        if(number==0){
+        if(number<=0){
+            if(number==0)
             System.out.println(string);
             return;
         }
-        
+        printStairsPath(number-1, "1"+string);
+        printStairsPath(number-2, "2"+string);
+        printStairsPath(number-3, "3"+string);
     }
 }
