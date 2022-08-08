@@ -13,8 +13,6 @@ public class Recursion_Example_21_PrintStairsPath {
             System.out.println(string);
             return;
         }
-        for (int i = 1; i < number; i++) {
-            printStairsPath(number-i, string+"i");
-        }
+        
     }
 }
