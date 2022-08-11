@@ -6,7 +6,7 @@ public class Arrays2D_6_ExitPointOfMatrix {
         int j=0;
         int dir=0;
         while(true){
-            dir = dir+arr[i][j]%4;
+            dir = (dir+arr[i][j])%4;
             if(dir==0){
                 j++;
             }
