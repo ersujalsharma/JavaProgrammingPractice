@@ -16,6 +16,7 @@ public class Recursion_backtracking_Flood_fill {
 
     private static void printFloodFill(int[][] arr, int start_row, int start_col, int n, int m, String ans) {
         if(start_row<0 || start_col<0 || start_row == n || start_col == m){
+            System.out.println(ans);
             return;
         }
         printFloodFill(arr, start_row+1, start_col, n, m, ans+"d");
