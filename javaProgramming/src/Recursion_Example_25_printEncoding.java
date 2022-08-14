@@ -34,7 +34,6 @@ public class Recursion_Example_25_printEncoding {
                 int character = ch-'0';
                 char charval = (char) ('a'+character-1);
                 printEncoding(roq, string+charval);
-            } 
             String ch12 = str.substring(0, 2);
             String ros = str.substring(2);
             int ch123 = Integer.parseInt(ch12);
