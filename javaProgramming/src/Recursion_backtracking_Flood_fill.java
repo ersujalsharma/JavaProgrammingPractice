@@ -9,19 +9,22 @@ public class Recursion_backtracking_Flood_fill {
         int start_row =0;
         int start_col =0;
         String ans ="";
-        printFloodFill(arr,start_row,start_col,n,m,ans){
-
-        }
+        printFloodFill(arr,start_row,start_col,n,m,ans);
     }
 
     private static void printFloodFill(int[][] arr, int start_row, int start_col, int n, int m, String ans) {
-        if(start_row<0 || start_col<0 || start_row == n || start_col == m){
+        if(start_col == m || start_row==n){
             System.out.println(ans);
             return;
-        }
-        printFloodFill(arr, start_row+1, start_col, n, m, ans+"d");
-        printFloodFill(arr, start_row, start_col+1, n, m, ans+"r");
-        printFloodFill(arr, start_row-1, start_col, n, m, ans+"t");
-        printFloodFill(arr, start_row, start_col-1, n, m, ans+"l");
+        }    
+        //
+        //down row+1;
+        printFloodFill(arr, start_row+1, start_col, n, m, "d"+ans);
+        // up
+        printFloodFill(arr, start_row-1, start_col, n, m, "t"+ans);
+        // right col+1
+        printFloodFill(arr, start_row, start_col+1, n, m, "r"+ans);
+        // leftcol col-1
+        printFloodFill(arr, start_row, start_col-1, n, m, ans);
     }
 }
