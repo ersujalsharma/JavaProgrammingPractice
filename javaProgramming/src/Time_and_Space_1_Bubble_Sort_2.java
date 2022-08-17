@@ -15,10 +15,7 @@ public class Time_and_Space_1_Bubble_Sort_2 {
                     arr[j+1] = arr[j];
                     arr[j] = temp;
                 }
-                for (int j2 = 0; j2 < n; j2++) {
-                    System.out.print(arr[j2]);
-                }
-                System.out.println();
+            System.out.println("its swap time");
             }
         }
         for (int i = 0; i < arr.length; i++) {

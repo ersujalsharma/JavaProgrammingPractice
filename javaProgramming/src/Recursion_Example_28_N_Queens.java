@@ -47,4 +47,3 @@ public class Recursion_Example_28_N_Queens {
         return true;
     }
 }
-}
