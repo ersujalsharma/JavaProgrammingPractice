@@ -6,22 +6,22 @@ import java.util.Stack;
 public class Stack_1 {
 
     public static void main(String[] args) {
-        Stack<Integer> stack = new Stack<Integer>();
+        Stack<Integer> stack = new Stack<>();
+        stack.push(10);
         System.out.println(stack);
-        stack.push(1);
+        stack.push(20);
         System.out.println(stack);
-        stack.push(2);
+        stack.push(50);
         System.out.println(stack);
-        System.out.println(stack.peek());
-        int a = (int) stack.peek();
-        System.out.println(a);
-        int location = stack.search(1);
-        System.out.println(stack.size()-location);
-        stack.push(25);
+        System.out.println( stack.peek());
         System.out.println(stack);
         stack.pop();
         System.out.println(stack);
-        System.out.println(stack.peek());
-        System.out.println(stack.size());
+        System.out.println( stack.size());
+        System.out.println(stack);
+        stack.add(2);
+        System.out.println(stack);
+        stack.add(2,1);
+        System.out.println(stack);
     }
 }
