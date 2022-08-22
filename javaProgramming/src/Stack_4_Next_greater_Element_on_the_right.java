@@ -4,7 +4,7 @@ import java.util.Stack;
 /**
  * Stack_Next_greater_Element_on_the_right
  */
-public class Stack_Next_greater_Element_on_the_right {
+public class Stack_4_Next_greater_Element_on_the_right {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
