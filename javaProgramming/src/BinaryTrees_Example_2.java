@@ -73,33 +73,41 @@ public class BinaryTrees_Example_2 {
         display(root.left);
         display(root.right);
     }
-    private static int sizeoftree(Node root) {
-        if(root == null){
-            return 0;
+    private static void traversalInOrder(BinaryTrees_Example_2.Node root) {
+        if(root == null ){
+            return;
         }
-        int size=1;
-        int sizeofleft = sizeoftree(root.left);
-        int sizeofright = sizeoftree(root.right);
-        return size+sizeofleft+sizeofright;
+        traversalInOrder(root.left);
+        System.out.print(root.data+" ");
+        traversalInOrder(root.right);
     }
-    private static int sumoftree(Node root) {
-        if(root == null){
-            return 0;
+    private static void traversalPostOrder(BinaryTrees_Example_2.Node root) {
+        if(root == null ){
+            return;
         }
-        int sum = root.data;
-        int sumofleft = sizeoftree(root.left);
-        int sumofright = sizeoftree(root.right);
-        return sum+sumofleft+sumofright;
+        traversalPostOrder(root.left);
+        traversalPostOrder(root.right);
+        System.out.print(root.data+" ");
     }
+    private static void traversalPreOrder(BinaryTrees_Example_2.Node root) {
+        if(root == null ){
+            return;
+        }
+        System.out.print(root.data+" ");
+        traversalPreOrder(root.left);
+        traversalPreOrder(root.right);
+    }
+    
     public static void main(String[] args) {
         Integer []arr = {50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, null, 70, null, null, 87, null, null};
         Node root = construct(arr);
         display(root);
-        System.out.println("Sujal Sharma");
-        int size = sizeoftree(root);
-        System.out.println(size);
-        int sumoftree = sumoftree(root);
-        System.out.println(sumoftree);
+       
+        traversalPreOrder(root);
+        System.out.println();
+        traversalPostOrder(root);
+        System.out.println();
+        traversalInOrder(root);
     }
     
     
