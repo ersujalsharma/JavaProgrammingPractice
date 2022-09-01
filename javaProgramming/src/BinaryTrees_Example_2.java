@@ -109,6 +109,4 @@ public class BinaryTrees_Example_2 {
         System.out.println();
         traversalInOrder(root);
     }
-    
-    
 }
