@@ -1,0 +1,16 @@
+package Strivers_DSA_Sheet;
+
+import java.util.Scanner;
+
+public class Pattern14 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        for (int i = n; i > 0; i--) {
+            for (int j = 'A'; j < 'A'+i; j++) {
+                System.out.printf("%c",j);
+            }
+            System.out.println();
+        }
+    }
+}

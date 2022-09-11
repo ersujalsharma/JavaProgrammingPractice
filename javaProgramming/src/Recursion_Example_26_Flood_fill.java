@@ -1,5 +1,5 @@
 import java.io.*;
-import java.util.*;
+import java.util.Scanner;
 
 public class Recursion_Example_26_Flood_fill {
 
