@@ -1,76 +1,47 @@
 package ToCheckErrors;
-import java.io.*;
 
+import java.io.*;
 import java.util.*;
 
 public class Main {
-
-  public static int solution(String[] words, int[] farr, int[] score, int idx) {
-
-    if (idx == words.length)
-    {
-      return 0;
-    }
-
-    int sno = 0 + solution(words, farr, score, idx + 1); //score of the subset when the word is not included
-
-    int sword = 0;
-    String word = words[idx];
-    boolean flag = true;
-
-    for (int i = 0; i < word.length(); i++)
-    {
-      char ch = word.charAt(i);
-      if (farr[ch - 'a'] == 0)
-      {
-        flag = false;
+  static int counter = 0;
+  public static void solution(int i, int n, int k, int rssf, ArrayList<ArrayList<Integer>> ans) {
+    //write your code here
+    if(i>n){
+      if(rssf == n){
+        counter++;
+        System.out.print(counter+".");
+        for (ArrayList<Integer> set : ans) {
+          System.out.print(set+" ");
+        }
+        System.out.println();
       }
-      farr[ch - 'a']--;
-      sword += score[ch - 'a'];
-    }
-
-    int syes = 0; //score of the subset when the word is included
-    if (flag)
-    {
-      syes = sword + solution(words, farr, score, idx + 1);
-    }
-
-    for (int i = 0; i < word.length(); i++)
-    {
-      char ch = word.charAt(i);
-      farr[ch - 'a']++;
-    }
-
-    return Math.max(syes, sno);
-  }
-
-  public static void main(String[] args) {
-
-    Scanner scn = new Scanner(System.in);
-    int nofWords = scn.nextInt();
-    String[] words = new String[nofWords];
-    for (int i = 0 ; i < words.length; i++) {
-      words[i] = scn.next();
-    }
-    int nofLetters = scn.nextInt();
-    char[] letters = new char[nofLetters];
-    for (int i = 0; i < letters.length; i++) {
-      letters[i] = scn.next().charAt(0);
-    }
-    int[] score = new int[26];
-    for (int i = 0; i < score.length; i++) {
-      score[i] = scn.nextInt();
-    }
-    if (words == null || words.length == 0 || letters == null || letters.length == 0 || score == null
-        || score.length == 0) {
-      System.out.println(0);
       return;
     }
-    int[] farr = new int[score.length];
-    for (char ch : letters) {
-      farr[ch - 'a']++;
+    for (int j = 0; j < ans.size(); j++) {
+      if(ans.get(j).size() > 0){
+        ans.get(j).add(i);
+        solution(i+1,n,k,rssf,ans);
+        ans.get(j).remove(ans.get(j).size()-1);
+      }
+      else{
+        ans.get(j).add(i);
+        solution(i+1,n,k,rssf+1,ans);
+        ans.get(j).remove(ans.get(j).size()-1);
+        break;
+      }
     }
-    System.out.println(solution(words, farr, score, 0));
+  }
+  public static void main(String[] args) {
+    Scanner scn = new Scanner(System.in);
+    int n = scn.nextInt();
+    int k = scn.nextInt();
+    ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
+    for(int i  = 0; i < k; i++) {
+      ans.add(new ArrayList<>());
+    }
+    solution(1, n, k, 0, ans);
 
   }
+
 }
