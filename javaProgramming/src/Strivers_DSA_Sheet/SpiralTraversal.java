@@ -9,7 +9,7 @@ public class SpiralTraversal {
         int mincol = 0;
         int maxcol = arr[0].length-1;
         int size = (arr.length*arr[0].length)-1;
-        while((minrow >= maxrow || mincol >= maxcol)) || size){
+        while((minrow < maxrow && mincol < maxcol))){
             //up Wall from left to right
             for(int j=mincol;j<=maxcol;j++){
                 System.out.print(arr[minrow][j]+", ");
